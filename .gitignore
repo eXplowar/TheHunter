@@ -1,6 +1,9 @@
+# Windows thumbnail cache files
+Thumbs.db
+
 # Visual Studio 2015 cache/options directory
 #.vs/
+*.vc.opendb
 
 # Other
 Backups/
-Thumbs.db
