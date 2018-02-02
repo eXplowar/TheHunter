@@ -1,1 +1,23 @@
-﻿  Hunter.vcxproj -> C:\Users\SwaR\source\repos\Hunter\Debug\Hunter.exe
+﻿  Main.cpp
+c:\users\swar\source\repos\hunter\hunter\main.cpp(181): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+c:\users\swar\source\repos\hunter\hunter\main.cpp(186): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+c:\users\swar\source\repos\hunter\hunter\main.cpp(192): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+c:\users\swar\source\repos\hunter\hunter\main.cpp(195): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+c:\users\swar\source\repos\hunter\hunter\main.cpp(356): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\swar\source\repos\hunter\hunter\main.cpp(367): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\swar\source\repos\hunter\hunter\main.cpp(380): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+c:\users\swar\source\repos\hunter\hunter\main.cpp(207): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  c:\users\swar\source\repos\hunter\hunter\main.cpp(285): note: выполняется компиляция ссылки на экземпляр шаблон функции "void SelectGameUnit<Hunter>(T &,sf::Vector2i)"
+          with
+          [
+              T=Hunter
+          ]
+c:\users\swar\source\repos\hunter\hunter\main.cpp(218): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  c:\users\swar\source\repos\hunter\hunter\main.cpp(294): note: выполняется компиляция ссылки на экземпляр шаблон функции "void MoveGameUnitByPlayer<Hunter>(T &,sf::Vector2i)"
+          with
+          [
+              T=Hunter
+          ]
+c:\users\swar\source\repos\hunter\hunter\main.cpp(240): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+c:\users\swar\source\repos\hunter\hunter\main.cpp(435): warning C4715: startGame: значение возвращается не при всех путях выполнения
+  Hunter.vcxproj -> C:\Users\SwaR\source\repos\Hunter\Debug\Hunter.exe

@@ -114,17 +114,56 @@ void initWorldMap() {
 		}
 	}
 
-	hunter1 = Hunter(std::rand() % worldMapHeight, std::rand() % worldMapWidth); // Hunter(4, 3); // Появляясь на координате 43 игрок может ходить только на 42 33 53 44
-	worldMap[hunter1.yPos][hunter1.xPos] = hunter1.id;
+	// Во избежание ситуаций когда сгенерированная новая пара уже присвоена некоторому объекту, 
+	// создаётся Карта(ИмяИгровогоОбьекта, Пара(координатаX, координатаY)), 
+	// после чего проверяется наличие пары с координатами в карте
+	std::map<std::pair<int, int>, std::string> mGameObjectPair;
+	std::pair<int, int> tempCoordinate;
 
-	hunter2 = Hunter(std::rand() % worldMapHeight, std::rand() % worldMapWidth);
-	worldMap[hunter2.yPos][hunter2.xPos] = hunter2.id;
+	tempCoordinate = std::make_pair(std::rand() % worldMapHeight, std::rand() % worldMapWidth);
+	mGameObjectPair[tempCoordinate] = "hunter1";
 
-	animal1 = Animal(std::rand() % worldMapHeight, std::rand() % worldMapWidth); // Animal(6, 4);
-	worldMap[animal1.yPos][animal1.xPos] = animal1.id;
+	do
+	{
+		tempCoordinate = std::make_pair(std::rand() % worldMapHeight, std::rand() % worldMapWidth);
+	} while (!mGameObjectPair[tempCoordinate].empty());
+	mGameObjectPair[tempCoordinate] = "hunter2";
 
-	trap1 = Trap(std::rand() % worldMapHeight, std::rand() % worldMapWidth); // Trap(3, 5);
-	worldMap[trap1.yPos][trap1.xPos] = trap1.id;
+	do
+	{
+		tempCoordinate = std::make_pair(std::rand() % worldMapHeight, std::rand() % worldMapWidth);
+	} while (!mGameObjectPair[tempCoordinate].empty());
+	mGameObjectPair[tempCoordinate] = "animal1";
+
+	do
+	{
+		tempCoordinate = std::make_pair(std::rand() % worldMapHeight, std::rand() % worldMapWidth);
+	} while (!mGameObjectPair[tempCoordinate].empty());
+	mGameObjectPair[tempCoordinate] = "trap1";
+
+	// Сопоставление значения карты с игровыми объектами
+	for (std::map<std::pair<int, int>, std::string>::iterator it = mGameObjectPair.begin(); it != mGameObjectPair.end(); ++it) {
+		/*std::cout << it->second << ": ";
+		std::cout << it->first.first << " ";
+		std::cout << it->first.second << "\n";*/
+		if (it->second == "hunter1") {
+			hunter1 = Hunter(it->first.first, it->first.second);
+			worldMap[hunter1.yPos][hunter1.xPos] = hunter1.id;
+		}
+		else if (it->second == "hunter2") {
+			hunter2 = Hunter(it->first.first, it->first.second);
+			worldMap[hunter2.yPos][hunter2.xPos] = hunter2.id;
+		}
+		else if (it->second == "animal1") {
+			animal1 = Animal(it->first.first, it->first.second);
+			worldMap[animal1.yPos][animal1.xPos] = animal1.id;
+		}
+		else if (it->second == "trap1") {
+			trap1 = Trap(it->first.first, it->first.second);
+			worldMap[trap1.yPos][trap1.xPos] = trap1.id;
+		}
+
+	}
 
 	std::cout << hunter1.id << " - Hunter; " << animal1.id << " - Animal; " << trap1.id << " - Trap" << std::endl << std::endl;
 
@@ -332,7 +371,6 @@ bool startGame() {
 					}
 				}
 				std::cout << std::endl;
-
 
 				// 3. Используя функцию случайных чисел выбрать случайное число изходя из количества доступных для хода вариантов
 				int randomInt = std::rand() % vAvailableCells.size();
