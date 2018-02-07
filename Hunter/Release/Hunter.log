@@ -1,0 +1,26 @@
+﻿  Main.cpp
+Main.cpp(181): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+Main.cpp(186): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+Main.cpp(192): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+Main.cpp(195): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+Main.cpp(356): warning C4018: <: несоответствие типов со знаком и без знака
+Main.cpp(367): warning C4018: <: несоответствие типов со знаком и без знака
+Main.cpp(380): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+Main.cpp(207): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  Main.cpp(285): note: выполняется компиляция ссылки на экземпляр шаблон функции "void SelectGameUnit<Hunter>(T &,sf::Vector2i)"
+          with
+          [
+              T=Hunter
+          ]
+Main.cpp(218): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  Main.cpp(294): note: выполняется компиляция ссылки на экземпляр шаблон функции "void MoveGameUnitByPlayer<Hunter>(T &,sf::Vector2i)"
+          with
+          [
+              T=Hunter
+          ]
+Main.cpp(240): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  Создание кода
+c:\users\swar\source\repos\hunter\hunter\main.cpp(435): warning C4715: startGame: значение возвращается не при всех путях выполнения
+  All 324 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  Hunter.vcxproj -> C:\Users\SwaR\source\repos\Hunter\Release\Hunter.exe
